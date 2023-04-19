@@ -1,4 +1,7 @@
+
 FROM rust:1.68.2
+
+EXPOSE 8000
 
 WORKDIR /app
 COPY . .
@@ -6,4 +9,8 @@ COPY . .
 RUN rustup default nightly
 RUN cargo build --release
 
+ENV ROCKET_ADDRESS=0.0.0.0
+ENV ROCKET_PORT=8000
+
 CMD cargo run --release
+
