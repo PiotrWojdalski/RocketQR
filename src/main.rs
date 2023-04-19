@@ -1,28 +1,25 @@
-
-#[macro_use]
 extern crate rocket;
 
 use rocket::fs::{FileServer, relative};
-use rocket::response::content::RawHtml;
 use rocket_dyn_templates::context;
 use rocket_dyn_templates::Template;
 
 // If we wanted or needed to serve files manually, we'd use `NamedFile`. Always
 // prefer to use `FileServer`!
-mod manual {
-    use std::path::{PathBuf, Path};
-    use rocket::fs::NamedFile;
+// mod manual {
+//     use std::path::{PathBuf, Path};
+//     use rocket::fs::NamedFile;
 
-    #[rocket::get("/second/<path..>")]
-    pub async fn second(path: PathBuf) -> Option<NamedFile> {
-        let mut path = Path::new(super::relative!("static")).join(path);
-        if path.is_dir() {
-            path.push("index.html");
-        }
+//     #[rocket::get("/second/<path..>")]
+//     pub async fn second(path: PathBuf) -> Option<NamedFile> {
+//         let mut path = Path::new(super::relative!("static")).join(path);
+//         if path.is_dir() {
+//             path.push("index.html");
+//         }
 
-        NamedFile::open(path).await.ok()
-    }
-}
+//         NamedFile::open(path).await.ok()
+//     }
+// }
 
 #[rocket::get("/")]
 fn index() -> Template {
@@ -107,7 +104,7 @@ fn rpa() -> Template {
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", rocket::routes![index,manual::second,eco,desktop,sd,mon,cctv,bi,npl,change,rpa])
+        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,rpa])
         .attach(Template::fairing())
         .mount("/", FileServer::from(relative!("static")))
 }
