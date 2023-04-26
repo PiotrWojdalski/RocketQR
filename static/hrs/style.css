@@ -144,7 +144,7 @@ sub, sup { line-height: 0; }
 	Banner
 -------------------------------------------*/
 [role="banner"] h1 { padding: 1em 0 0; text-transform: uppercase; letter-spacing: 0.1em; font-size: 3.5rem; font-weight: 900; color: #182e4f; visibility: hidden; }
-[role="banner"] h1:before { content: "Salling Group Pathfinder"; visibility: visible; display: block; }
+[role="banner"] h1:before { content: "Payroll and HR support"; visibility: visible; display: block; }
 [role="banner"] h1:after { content: "In SSC"; visibility: visible; display: block; color: #aaa; letter-spacing: 0.5em; font-size: 1.4rem; font-weight: normal; margin: 0.5em 0 3em; color: rgba(24, 46, 79, 0.4); }
 
 [role="banner"] h2 { visibility: hidden; display: none; text-transform: uppercase; font-weight: 400; color: rgba(41, 78, 134, 0.5); }
