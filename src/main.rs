@@ -144,22 +144,28 @@ fn mdm() -> Template {
         job_description: "Master data maintain"
     })
 }
-#[rocket::get("/ac/apc")]
-fn apc() -> Template {
-    Template::render("ac", context! {
-        job_description: "AP Communication"
+#[rocket::get("/ac/ap")]
+fn ap() -> Template {
+    Template::render("acp", context! {
+        job_description: "Accounts Payable"
     })
 }
-#[rocket::get("/ac/apdk")]
+#[rocket::get("/ac/ap/ndk")]
+fn apndk() -> Template {
+    Template::render("acp", context! {
+        job_description: "AP NonDK"
+    })
+}
+#[rocket::get("/ac/ap/dk")]
 fn apdk() -> Template {
-    Template::render("ac", context! {
+    Template::render("acp", context! {
         job_description: "AP DK"
     })
 }
-#[rocket::get("/ac/apndk")]
-fn apndk() -> Template {
-    Template::render("ac", context! {
-        job_description: "AP non DK"
+#[rocket::get("/ac/ap/c")]
+fn apc() -> Template {
+    Template::render("acp", context! {
+        job_description: "AP Communication"
     })
 }
 #[rocket::get("/ac/p2p")]
@@ -170,26 +176,33 @@ fn p2p() -> Template {
 }
 #[rocket::get("/ac/ar")]
 fn ar() -> Template {
-    Template::render("ac", context! {
-        job_description: "AR"
+    Template::render("acr", context! {
+        job_description: "Accounts Receivable"
     })
 }
+
 #[rocket::get("/ac/csde")]
 fn csde() -> Template {
     Template::render("ac", context! {
         job_description: "Customer Service DE"
     })
 }
-#[rocket::get("/ac/glpl")]
-fn glpl() -> Template {
-    Template::render("ac", context! {
-        job_description: "GL PL"
+#[rocket::get("/ac/gl/dk")]
+fn gldk() -> Template {
+    Template::render("acgl", context! {
+        job_description: "GL DK"
     })
 }
-#[rocket::get("/ac/gldk")]
-fn gldk() -> Template {
-    Template::render("ac", context! {
-        job_description: "GL DK"
+#[rocket::get("/ac/gl")]
+fn gl() -> Template {
+    Template::render("acgl", context! {
+        job_description: "Genneral Ledger"
+    })
+}
+#[rocket::get("/ac/gl/pl")]
+fn glpl() -> Template {
+    Template::render("acgl", context! {
+        job_description: "GL PL"
     })
 }
 #[rocket::get("/ctrl/index")]
@@ -198,24 +211,53 @@ fn ctrl() -> Template {
         job_description: "Controlling"
     })
 }
-#[rocket::get("/hra/index")]
+#[rocket::get("/ctrl/fp")]
+fn ctrlfp() -> Template {
+    Template::render("ctrl", context! {
+        job_description: "FP"
+    })
+}
+#[rocket::get("/ctrl/ff")]
+fn ctrlff() -> Template {
+    Template::render("ctrl", context! {
+        job_description: "FF"
+    })
+}
+#[rocket::get("/hr/index")]
+fn hr() -> Template {
+    Template::render("hr", context! {
+        job_description: "HR support,HR & Administration"
+    })
+}
+#[rocket::get("/hr/hrs")]
+fn hrs() -> Template {
+    Template::render("hr", context! {
+        job_description: "HR support"
+    })
+}
+#[rocket::get("/hr/hra")]
 fn hra() -> Template {
-    Template::render("hra", context! {
+    Template::render("hr", context! {
         job_description: "HR & Administration"
     })
 }
-#[rocket::get("/hrs/index")]
-fn hrs() -> Template {
-    Template::render("hrs", context! {
-        job_description: "HR Support"
+#[rocket::get("/payroll/index")]
+fn payroll() -> Template {
+    Template::render("payroll", context! {
+        job_description: "Payroll"
     })
 }
-
+#[rocket::get("/payroll/pl")]
+fn pl() -> Template {
+    Template::render("payroll", context! {
+        job_description: "Payroll"
+    })
+}
 
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,application,rpa,hra,hrs,ctrl,gldk,glpl,csde,ar,p2p,apndk,apdk,apc,mdm,mdc,mdg,ac,md,it])
+        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,application,rpa,payroll,hr,hrs,hra,ctrl,ctrlff,ctrlfp,gl,gldk,glpl,csde,ar,p2p,apndk,ap,apdk,apc,mdm,mdc,mdg,ac,md,it,pl])
         .attach(Template::fairing())
         .mount("/", FileServer::from(relative!("static")))
 }

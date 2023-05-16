@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; }
 html { font-size: 62.5%; } /* for rems */
-body { font-family: Helvetica, Arial, sans-serif; color: #333; background: #e8ecf0 no-repeat 50% 350px; }
+body { font-family: Helvetica, Arial, sans-serif; color: #333; background: #CACCD5 no-repeat 50% 350px; }
 
 
 /* block level */
@@ -43,7 +43,7 @@ mark { background: none; font-style: normal; }
 video { width: 100%; height: auto; }
 
 a { 
-	text-decoration: none; color: #a28351; position: relative; 
+	text-decoration: none; color: #BB8A44; position: relative; 
 	    transition: all 0.25s linear;
    -moz-transition: all 0.25s linear;
 -webkit-transition: all 0.25s linear;
@@ -51,7 +51,7 @@ a {
 }
 
 a:after { 
-	content: ""; display: block; background: #a28351; height: 2px; width: 100%; position: absolute; bottom: -0.2em; left: 0; opacity: 0; 
+	content: ""; display: block; background: #BB8A44; height: 2px; width: 100%; position: absolute; bottom: -0.2em; left: 0; opacity: 0; 
 	    transition: all 0.25s linear;
    -moz-transition: all 0.25s linear;
 -webkit-transition: all 0.25s linear;
@@ -143,8 +143,8 @@ sub, sup { line-height: 0; }
 /*-------------------------------------------    
 	Banner
 -------------------------------------------*/
-[role="banner"] h1 { padding: 1em 0 0; text-transform: uppercase; letter-spacing: 0.1em; font-size: 3.5rem; font-weight: 900; color: #182e4f; visibility: hidden; }
-[role="banner"] h1:before { content: "Controlling"; visibility: visible; display: block; }
+[role="banner"] h1 { padding: 1em 0 0; text-transform: uppercase; letter-spacing: 0.1em; font-size: 3.5rem; font-weight: 900; color: #133F4F; visibility: hidden; }
+[role="banner"] h1:before { content: "Salling Group Pathfinder"; visibility: visible; display: block; }
 [role="banner"] h1:after { content: "In SSC"; visibility: visible; display: block; color: #aaa; letter-spacing: 0.5em; font-size: 1.4rem; font-weight: normal; margin: 0.5em 0 3em; color: rgba(24, 46, 79, 0.4); }
 
 [role="banner"] h2 { visibility: hidden; display: none; text-transform: uppercase; font-weight: 400; color: rgba(41, 78, 134, 0.5); }
@@ -180,7 +180,7 @@ sub, sup { line-height: 0; }
 /*-------------------------------------------    
 	Benefits
 -------------------------------------------*/
-.benefits { visibility: visible; display: block; color: #aaa;  font-size: 1.6rem; font-weight: normal; margin: 0.5em 0 3em; color: rgba(24, 46, 79, 0.4); }
+.benefits { visibility: visible; display: block; color: #aaa;  font-size: 1.6rem; font-weight: normal; margin: 0.5em 0 3em; color: #7DB6D1; font-weight: bold; }
 
 
 /*-------------------------------------------    
@@ -207,7 +207,7 @@ sub, sup { line-height: 0; }
 			.designer-name:after, footer a:after { height: 1px; }
 
 
-.select:after { content: "Teams & managers"; font-size: 1.8rem; text-align: center; width: 7em; margin: 0 auto 2em; background: transparent no-repeat 50% 0; padding: 2em 0 0; color: #182e4f; visibility: visible; }
+.select:after { content: "Departments& managers"; font-size: 1.8rem; text-align: center; width: 7em; margin: 0 auto 2em; background: transparent no-repeat 50% 0; padding: 2em 0 0; color: #133F4F; visibility: visible; }
 
 .archives, .resources { position: absolute; left: -9999px;  }
 
