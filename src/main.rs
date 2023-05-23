@@ -157,7 +157,7 @@ fn apc() -> Template {
 #[rocket::get("/ac/p2p")]
 fn p2p() -> Template {
     Template::render("ac", context! {
-        job_description: "P2P"
+        job_description: "Zespół, który zarządza zakupami oraz kosztami firmy w systemie Coupa. Od zakupów do płatności – zespół odpowiedzialny jest na wdrożenie zawartości i zarządzanie systemem. Na zarządzanej platformie prowadzone są aukcje gdzie firmy wygrywają świadczenie usług dla spółki (zostają głównym dostawca np. produktów)."
     })
 }
 #[rocket::get("/ac/ar")]
@@ -170,7 +170,7 @@ fn ar() -> Template {
 #[rocket::get("/ac/csde")]
 fn csde() -> Template {
     Template::render("ac", context! {
-        job_description: "Customer Service DE"
+        job_description: "Jest to zespół, który wspiera niemiecki obszar sklepów Netto w kontakcie z klientem zewnętrznym. Obowiązki zespołu głównie dotyczą obsługi systemu ZenDesk, gdzie trafiają różnego rodzaju zapytania od klientów sklepów Netto na które trzeba odpowiedzieć np. Anulowanie mandatu za parking, Reklamacje produktów – uszkodzonych, niezgodnych z opisem, nieświeżych oraz zapytania o produkty w kolejnych gazetkach."
     })
 }
 #[rocket::get("/ac/gl/dk")]
@@ -242,20 +242,22 @@ fn payroll() -> Template {
     Template::render("payroll", context! {
         job_description: "Payroll zajmuje się obsługą kadrowo-płacową pracowników sklepów Netto. Odpowiada za
 
-        zatrudnianie pracowników, przygotowanie umów o pracę oraz poprawne naliczanie wynagrodzeń pracowników. Dział odpowiada przed instytucjami państwowymi takimi jak ZUS czy Urząd Skarbowy za dostarczanie poprawnych danych dotyczących wysokości naliczonego podatku lub składek emerytalno-rentowych. Stoi na straży przestrzegania prawa pracy, dba o kompletność akt personalnych oraz przygotowanie raportu płacowych dla biznesu. Zespół Payroll jest podzielony na dwa obszary:"
-    })
-}
-#[rocket::get("/payroll/pl")]
-fn pl() -> Template {
-    Template::render("payroll", context! {
-        job_description: "Zespół powstał po tranzycji sklepów Tesco. Odpowiada za obsługę kadrowo – płacową byłych pracowników Tesco."
+        zatrudnianie pracowników, przygotowanie umów o pracę oraz poprawne naliczanie wynagrodzeń pracowników. Dział odpowiada przed instytucjami państwowymi takimi jak ZUS czy Urząd Skarbowy za dostarczanie poprawnych danych dotyczących wysokości naliczonego podatku lub składek emerytalno-rentowych. Stoi na straży przestrzegania prawa pracy, dba o kompletność akt personalnych oraz przygotowanie raportu płacowych dla biznesu. Zespół Payroll jest podzielony na dwa obszary:
+
+Netto Indygo
+TL: Katarzyna Wabiszewicz 
+Zespół odpowiada za obsługę kadrowo – płacową byłych pracowników Tesco.
+
+Netto Yellow 
+TL: Anna Kowalewska.
+Obsługa kadrowo – płacowa tego zespołu obejmuje pracowników Netto  "
     })
 }
 
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,application,rpa,payroll,hr,hrs,hra,ctrl,ctrlff,ctrlfp,gl,gldk,glpl,csde,ar,p2p,apndk,ap,apdk,apc,mdm,mdc,mdg,ac,md,it,pl])
+        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,application,rpa,payroll,hr,hrs,hra,ctrl,ctrlff,ctrlfp,gl,gldk,glpl,csde,ar,p2p,apndk,ap,apdk,apc,mdm,mdc,mdg,ac,md,it])
         .attach(Template::fairing())
         .mount("/", FileServer::from(relative!("static")))
 }
