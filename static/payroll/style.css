@@ -207,7 +207,7 @@ sub, sup { line-height: 0; }
 			.designer-name:after, footer a:after { height: 1px; }
 
 
-.select:after { content: "Teams & managers"; font-size: 1.8rem; text-align: center; width: 7em; margin: 0 auto 2em; background: transparent no-repeat 50% 0; padding: 2em 0 0; color: #182e4f; visibility: visible; }
+.select:after { content: "Teams& team leaders"; font-size: 1.8rem; text-align: center; width: 7em; margin: 0 auto 2em; background: transparent no-repeat 50% 0; padding: 2em 0 0; color: #182e4f; visibility: visible; }
 
 .archives, .resources { position: absolute; left: -9999px;  }
 
@@ -259,7 +259,7 @@ footer { font-size: 1.3rem; }
 
 	.intro:before { content: ""; display: block; width: 105px; height: 30px; position: fixed; top: 154px; left: 3%; background: no-repeat -184px -99px; }
 
-	[role="article"], [role="banner"], footer { padding: 0 30% 10em 10%; text-align: right; position: relative; }
+	[role="article"], [role="banner"], footer { padding: 0 30% 10px 10%; text-align: right; position: relative; }
 		[role="article"] h3, [role="banner"] h2 { position: absolute; top: -0.75em; left: 75%; width: 10em; text-align: left; font-size: 1.5rem; letter-spacing: 0; }
 		[role="article"] h3:after { position: absolute; top: 0; }
 

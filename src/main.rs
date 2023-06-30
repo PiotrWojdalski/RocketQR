@@ -167,7 +167,7 @@ fn ar() -> Template {
     })
 }
 
-#[rocket::get("/ac/csde")]
+#[rocket::get("/mdc/csde")]
 fn csde() -> Template {
     Template::render("ac", context! {
         job_description: "Jest to zespół, który wspiera niemiecki obszar sklepów Netto w kontakcie z klientem zewnętrznym. Obowiązki zespołu głównie dotyczą obsługi systemu ZenDesk, gdzie trafiają różnego rodzaju zapytania od klientów sklepów Netto na które trzeba odpowiedzieć np. Anulowanie mandatu za parking, Reklamacje produktów – uszkodzonych, niezgodnych z opisem, nieświeżych oraz zapytania o produkty w kolejnych gazetkach."
@@ -194,19 +194,9 @@ fn glpl() -> Template {
 #[rocket::get("/ctrl/index")]
 fn ctrl() -> Template {
     Template::render("ctrl", context! {
-        job_description: "Zadaniem działu jest raportowanie, przygotowywanie budżetów, tworzenie prognoz krótko i długoterminowych oraz przygotowywanie szczegółowych analiz na potrzeby wewnętrzne. Controlling jest podzielony na dwa obszary:"
-    })
-}
-#[rocket::get("/ctrl/fp")]
-fn ctrlfp() -> Template {
-    Template::render("ctrl", context! {
-        job_description: "Zespół zajmuje się analizowaniem danych dla kluczowych osób decyzyjnych w Salling Group, Działu IT, Działu Projektów Wewnętrznych, Działu Inwestycji oraz dla Działu Zakupów i wszystkich formatów Salling Group."
-    })
-}
-#[rocket::get("/ctrl/ff")]
-fn ctrlff() -> Template {
-    Template::render("ctrl", context! {
-        job_description: "Zespół zajmuje się analizowaniem danych z obszaru logistyki, audytu wewnętrznego oraz danymi z Działu Zakupów i wszystkich formatów Salling Group."
+        job_description: "Zadaniem działu jest raportowanie, przygotowywanie budżetów, tworzenie prognoz krótko i długoterminowych oraz przygotowywanie szczegółowych analiz na potrzeby wewnętrzne. Controlling jest podzielony na dwa obszary:",
+        job_1: "FA/SA/CA/LOGISTICS: - Zespół zajmuje się analizowaniem danych dla kluczowych osób decyzyjnych w Salling Group, Działu IT, Działu Projektów Wewnętrznych, Działu Inwestycji oraz dla Działu Zakupów i wszystkich formatów Salling Group.",
+        job_2: "FP&A/CF/NF/IT/CAPEX: - Zespół zajmuje się analizowaniem danych z obszaru logistyki, audytu wewnętrznego oraz danymi z Działu Zakupów i wszystkich formatów Salling Group."
     })
 }
 #[rocket::get("/hr/index")]
@@ -242,22 +232,21 @@ fn payroll() -> Template {
     Template::render("payroll", context! {
         job_description: "Payroll zajmuje się obsługą kadrowo-płacową pracowników sklepów Netto. Odpowiada za
 
-        zatrudnianie pracowników, przygotowanie umów o pracę oraz poprawne naliczanie wynagrodzeń pracowników. Dział odpowiada przed instytucjami państwowymi takimi jak ZUS czy Urząd Skarbowy za dostarczanie poprawnych danych dotyczących wysokości naliczonego podatku lub składek emerytalno-rentowych. Stoi na straży przestrzegania prawa pracy, dba o kompletność akt personalnych oraz przygotowanie raportu płacowych dla biznesu. Zespół Payroll jest podzielony na dwa obszary:
+        zatrudnianie pracowników, przygotowanie umów o pracę oraz poprawne naliczanie wynagrodzeń pracowników. Dział odpowiada przed instytucjami państwowymi takimi jak ZUS czy Urząd Skarbowy za dostarczanie poprawnych danych dotyczących wysokości naliczonego podatku lub składek emerytalno-rentowych. Stoi na straży przestrzegania prawa pracy, dba o kompletność akt personalnych oraz przygotowanie raportu płacowych dla biznesu. Zespół Payroll jest podzielony na dwa obszary:",
+        job_1: "Netto Indygo
+        TL: Katarzyna Wabiszewicz 
+        Zespół odpowiada za obsługę kadrowo – płacową byłych pracowników Tesco.",
+        job_2: "Netto Yellow 
+        TL: Anna Kowalewska.
+        Obsługa kadrowo – płacowa tego zespołu obejmuje pracowników Netto  "
 
-Netto Indygo
-TL: Katarzyna Wabiszewicz 
-Zespół odpowiada za obsługę kadrowo – płacową byłych pracowników Tesco.
-
-Netto Yellow 
-TL: Anna Kowalewska.
-Obsługa kadrowo – płacowa tego zespołu obejmuje pracowników Netto  "
     })
 }
 
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,application,rpa,payroll,hr,hrs,hra,ctrl,ctrlff,ctrlfp,gl,gldk,glpl,csde,ar,p2p,apndk,ap,apdk,apc,mdm,mdc,mdg,ac,md,it])
+        .mount("/", rocket::routes![index,eco,desktop,sd,mon,cctv,bi,npl,change,application,rpa,payroll,hr,hrs,hra,ctrl,gl,gldk,glpl,csde,ar,p2p,apndk,ap,apdk,apc,mdm,mdc,mdg,ac,md,it])
         .attach(Template::fairing())
         .mount("/", FileServer::from(relative!("static")))
 }
