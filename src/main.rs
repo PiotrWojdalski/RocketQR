@@ -93,7 +93,7 @@ fn npl() -> Template {
 #[rocket::get("/it/change")]
 fn change() -> Template {
     Template::render("it", context! {
-        job_description: "Jednoosobowy zespół odpowiadający za koordynację zmian zachodzących w środowisku IT, np. kategoryzowanie zmian i przygotowywanie ich w sposób, który zminimalizuje ryzyko powstania problemów dla tzw. biznesu (sklepów, magazynów, biura)."
+        job_description: "Jednoosobowy zespół odpowiadający za koordynację zmian zachodzących w środowisku IT,   np. kategoryzowanie zmian i przygotowywanie ich w sposób, który zminimalizuje ryzyko powstania problemów dla biznesu (sklepów, magazynów, biura)."
     })
 }
 #[rocket::get("/it/cctv")]
@@ -107,13 +107,14 @@ fn rpa() -> Template {
     Template::render("it", context! {
         job_description: "Zespół zajmuje się tworzeniem nowych rozwiązań automatyzacyjnych (botów) dla procesów, które obejmują całą spółkę Salling Group i są wykonywane aktualnie przez ludzi. Do ich
 
-        tworzenia zespół wykorzystuje platformę Automation Anywhere. RPA na bieżąco zarządza stworzonymi już botami, rozwiązuje tickety i naprawia błędy oraz monitoruje status botów i platformy."
+        tworzenia zespół wykorzystuje platformę Automation Anywhere. Automation na bieżąco zarządza stworzonymi już botami, rozwiązuje tickety i naprawia błędy oraz monitoruje status botów i platformy."
     })
 }
 #[rocket::get("/md/mdc")]
 fn mdc() -> Template {
     Template::render("md", context! {
-        job_description: "Zespół rejestruje artykuły na podstawie kart od kupca. Wprowadza dane logistyczne związane z produktem (np. ile sztuk jest w kartonie, jakie są wymiary – np. by sklep przygotował na nie miejsce w magazynie). W niektórych obszarach tworzy zamówienia asortymentu do sklepów na podstawie tzw. Purchase Order. Zespół MD Create zajmuje się również rejestracją artykułów sportowych oraz asortymentu stałego dla Netto PL, Netto DE oraz duńskich odpowiedników tych sklepów. Do zadań zespołu Create należy także dyżurowanie dla sklepu Netto. Dyżury odbywają się w tygodniu w godzinach 6-8 oraz w soboty, dzięki czemu zespół pomaga jak najszybciej rozwiązywać problemy pojawiające się na sklepach."
+        job_description: "Zespół rejestruje artykuły na podstawie kart od kupca. Wprowadza dane logistyczne związane z produktem (np. ile sztuk jest w kartonie, jakie są wymiary – np. by sklep przygotował na nie miejsce w magazynie). W niektórych obszarach tworzy zamówienia asortymentu do sklepów na podstawie tzw. Purchase Order. Zespół MD Create zajmuje się również rejestracją artykułów sportowych oraz asortymentu stałego dla Netto PL, Netto DE oraz duńskich odpowiedników tych sklepów. Do zadań zespołu Create należy także dyżurowanie dla sklepu Netto. Dyżury odbywają się w tygodniu w godzinach 6-8 oraz w soboty, dzięki czemu zespół pomaga jak najszybciej rozwiązywać problemy pojawiające się na sklepach.",
+        job_1: "W zespole MD Create znajduje się także zespół Netto Pomoc, który zajmuje obsługą zgłoszeń sklepowych, która polega na dbaniu o prawidłowy przepływ komunikacji pomiędzy Działami. Obsługa zgłoszeń odbywa się w systemie Service Now. Zespół odpowiada także, za obsługę aplikacji MyNetto i najważniejsze informacje, które powinny docierać do sklepów od Administracji. Netto Pomoc odpowiada za przygotowanie roboczej wersji kalendarza operacyjnego związanego z działaniami operacyjnymi w sklepach. Po otrzymaniu ostatecznej wersji kalendarza działania są publikowane w aplikacji."
     })
 }
 #[rocket::get("/md/mdg")]
@@ -127,7 +128,7 @@ fn mdm() -> Template {
     Template::render("md", context! {
         job_description: "MD Maintain wprowadza w systemie SAP zmiany na obecnych produktach np. dane logistyczne, kody, ceny, promocje, szyldy cenowe. Zmiany wprowadzane są na obszarach duńskich, Netto PL oraz Netto DE. Zespół jest również odpowiedzialny za trouble shooting – szukanie rozwiązań i przyjmowanie zapytań dla różnego rodzaju spraw, które się pojawiają. (np. jeśli jakiś produkt nie działa na kasie). Do zadań MDM należy także obsługa skrzynki Supplier Data Colaboration (SDC)
 
-        i zajmowanie się sprawami związanymi z ustawieniami Consignment na artykułach. W zespole MD Maintain znajduje się także zespół Netto Pomoc, który zajmuje obsługą zgłoszeń sklepowych, która polega na dbaniu o prawidłowy przepływ komunikacji pomiędzy Działami. Obsługa zgłoszeń odbywa się w systemie Service Now. Zespół odpowiada także, za obsługę aplikacji MyNetto i najważniejsze informacje, które powinny docierać do sklepów od Administracji. Netto Pomoc odpowiada za przygotowanie roboczej wersji kalendarza operacyjnego związanego z działaniami operacyjnymi w sklepach. Po otrzymaniu ostatecznej wersji kalendarza działania są publikowane w aplikacji."
+        i zajmowanie się sprawami związanymi z ustawieniami Consignment na artykułach. "
     })
 }
 #[rocket::get("/ac/ap")]
@@ -163,7 +164,7 @@ fn p2p() -> Template {
 #[rocket::get("/ac/ar")]
 fn ar() -> Template {
     Template::render("acr", context! {
-        job_description: "Zadaniem zespołu jest weryfikacja czy suma otrzymanych środków pieniężnych jest zgodna z sumą należną figurującą w naszym systemie księgowym. Niezależnie od tego, czy jest to obrót gotówkowy w sklepie, płatność kartą czy bonami. Zespół AR na bieżąco monitoruje dane ze sklepów i innych działów oraz śledzi stan na rachunkach bankowych. Po weryfikacji sald zespół raportuje je do Działu Należności, który z kolei je przelicza i sprawdza, czy suma pieniędzy za zakupy klientów zgadza się ze stanem konta firmowego. W wypadku nieprawidłowości zespół wyjaśnia je z Działem Audytu. Zespół współpracuje ze wszystkimi formatami Salling Group w prowadzeniu wymienionych działań."
+        job_description: "Zadaniem zespołu jest weryfikaJcja czy suma otrzymanych środków pieniężnych jest zgodna z sumą należną figurującą w naszym systemie księgowym. Niezależnie od tego, czy jest to obrót gotówkowy w sklepie, płatność kartą czy bonami. Zespół AR na bieżąco monitoruje dane ze sklepów i innych działów oraz śledzi stan na rachunkach bankowych. Po weryfikacji sald zespół raportuje je do Działu Należności, który z kolei je przelicza i sprawdza, czy suma pieniędzy za zakupy klientów zgadza się ze stanem konta firmowego. W wypadku nieprawidłowości zespół wyjaśnia je z Działem Audytu. Zespół współpracuje ze wszystkimi formatami Salling Group w prowadzeniu wymienionych działań."
     })
 }
 

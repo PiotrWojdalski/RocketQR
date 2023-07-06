@@ -143,7 +143,7 @@ sub, sup { line-height: 0; }
 /*-------------------------------------------    
 	Banner
 -------------------------------------------*/
-[role="banner"] h1 { padding: 1em 0 0; text-transform: uppercase; letter-spacing: 0.1em; font-size: 3.5rem; font-weight: 900; color: #182e4f; visibility: hidden; }
+[role="banner"] h1 { padding: 1em 0 0; text-transform: uppercase; letter-spacing: 0.1em; font-size: 3.5rem; font-weight: 900; color: rgb(19,63,68); visibility: hidden; }
 [role="banner"] h1:before { content: "Salling Group Pathfinder"; visibility: visible; display: block; }
 [role="banner"] h1:after { content: "In SSC"; visibility: visible; display: block; color: #aaa; letter-spacing: 0.5em; font-size: 1.4rem; font-weight: normal; margin: 0.5em 0 3em; color: rgba(24, 46, 79, 0.4); }
 
@@ -188,6 +188,18 @@ sub, sup { line-height: 0; }
 -------------------------------------------*/
 .requirements h3:after { content: "â€œOne Size Fitsâ€ All Be Damned!"; text-indent: -0.5em; }
 
+/*-------------------------------------------    
+	Right
+-------------------------------------------*/
+.right {
+	float: right;
+	width: auto;
+	margin-right: 5px;
+  }
+
+.img{
+	margin-top: 35%;
+}
 
 
 /*-------------------------------------------    
@@ -207,7 +219,7 @@ sub, sup { line-height: 0; }
 			.designer-name:after, footer a:after { height: 1px; }
 
 
-.select:after { content: "Teams & team leaders"; font-size: 1.8rem; text-align: center; width: 7em; margin: 0 auto 2em; background: transparent no-repeat 50% 0; padding: 2em 0 0; color: #182e4f; visibility: visible; }
+.select:after { content: "Departments& managers"; font-size: 1.8rem; text-align: center; width: 7em; margin: 0 auto 2em; background: transparent no-repeat 50% 0; padding: 2em 0 0; color: rgb(19, 63, 79); visibility: visible; }
 
 .archives, .resources { position: absolute; left: -9999px;  }
 
